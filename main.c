@@ -65,8 +65,8 @@ int add_command(const char* file1_path, const char* file2_path) {
     printf("\n");
 
     // Free the allocated memory for the merged result and the string content
-    FreeMergeStatesResult(merged_result, out_len);
-    DeinitAllocators();
+    FreeMem(merged_result, out_len);
+    Deinit();
     free(file1_content);
     free(file2_content);
 
@@ -94,8 +94,8 @@ int remove_command(const char* file1_path, const char* input_string_path) {
     printf("\n");
 
     // Free the allocated memory for the removed result
-    FreeMergeStatesResult(removed_result, out_len);
-    DeinitAllocators();
+    FreeMem(removed_result, out_len);
+    Deinit();
     free(file1_content);
 
     return EXIT_SUCCESS;
